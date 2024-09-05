@@ -4,6 +4,7 @@
 	"include": ["src/**/*"],
 	"exclude": ["src/**/*.test.*"],
 	"compilerOptions": {
-		"outDir": "./build"
+		"outDir": "./build",
+		"types": ["@cloudflare/workers-types"]
 	}
 }

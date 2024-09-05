@@ -1,3 +1,2 @@
-export function doSomething() {
-	throw new Error("Not implemented yet");
-}
+import { R2FileStorage } from "./lib/r2-file-storage.js";
+export { R2FileStorage };
