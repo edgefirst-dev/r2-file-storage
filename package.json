@@ -34,7 +34,10 @@
 		".": "./build/index.js",
 		"./package.json": "./package.json"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"@cloudflare/workers-types": "^4.20240903.0",
+		"@mjackson/file-storage": "^0.2.1"
+	},
 	"peerDependencies": {},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.15.3",
