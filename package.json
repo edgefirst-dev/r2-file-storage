@@ -1,6 +1,6 @@
 {
 	"name": "@edgefirst-dev/r2-file-storage",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "An implementation of @mjackson/file-storage that uses R2 as the storage backend.",
 	"license": "MIT",
 	"funding": [
