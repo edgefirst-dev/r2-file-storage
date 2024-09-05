@@ -10,7 +10,7 @@ An implementation of [@mjackson/file-storage](https://github.com/mjackson/remix-
 
 ## Installation
 
-Install from GitHub Package Registry with;
+Install from npm or GitHub Package Registry with;
 
 ```sh
 bun add @edgefirst/r2-file-storage
