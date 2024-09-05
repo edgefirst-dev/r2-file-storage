@@ -1,11 +1,9 @@
 {
-	"name": "package-name",
+	"name": "@edgefirst-dev/r2-file-storage",
 	"version": "0.0.1",
-	"description": "A description of the package",
+	"description": "An implementation of @mjackson/file-storage that uses R2 as the storage backend.",
 	"license": "MIT",
-	"funding": [
-		"https://github.com/sponsors/sergiodxa"
-	],
+	"funding": ["https://github.com/sponsors/sergiodxa"],
 	"author": {
 		"name": "Sergio Xalambrí",
 		"email": "hello+oss@sergiodxa.com",
@@ -13,11 +11,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sergiodxa/package"
+		"url": "https://github.com/edgefirst-dev/r2-file-storage"
 	},
-	"homepage": "https://sergiodxa.github.io/package",
+	"homepage": "https://edgefirst-dev.github.io/r2-file-storage",
 	"bugs": {
-		"url": "https://github.com/sergiodxa/package/issues"
+		"url": "https://github.com/edgefirst-dev/r2-file-storage/issues"
 	},
 	"scripts": {
 		"build": "tsc",
@@ -31,11 +29,7 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"files": [
-		"build",
-		"package.json",
-		"README.md"
-	],
+	"files": ["build", "package.json", "README.md"],
 	"exports": {
 		".": "./build/index.js",
 		"./package.json": "./package.json"
