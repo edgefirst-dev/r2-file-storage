@@ -1,4 +1,4 @@
-# r2-file-storage
+# @edgefirst-dev/r2-file-storage
 
 An implementation of [@mjackson/file-storage](https://github.com/mjackson/remix-the-web/tree/main/packages/file-storage) that uses R2 as the storage backend.
 
@@ -13,13 +13,13 @@ An implementation of [@mjackson/file-storage](https://github.com/mjackson/remix-
 Install from npm or GitHub Package Registry with;
 
 ```sh
-bun add @edgefirst/r2-file-storage
+bun add @edgefirst-dev/r2-file-storage
 ```
 
 ## Usage
 
 ```ts
-import { R2FileStorage } from "@edgefirst/r2-file-storage";
+import { R2FileStorage } from "@edgefirst-dev/r2-file-storage";
 
 let storage = new R2FileStorage(r2); // Get r2 from your Cloudflare bindings
 
