@@ -42,7 +42,7 @@
 	},
 	"dependencies": {
 		"@cloudflare/workers-types": "^4.20240903.0",
-		"@mjackson/file-storage": "^0.2.1"
+		"@mjackson/file-storage": "^0.3.0"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
