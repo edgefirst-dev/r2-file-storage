@@ -52,7 +52,7 @@
 		"@types/bun": "^1.1.8",
 		"consola": "^3.2.3",
 		"typedoc": "^0.26.6",
-		"typedoc-plugin-mdn-links": "^3.2.11",
+		"typedoc-plugin-mdn-links": "^4.0.1",
 		"typescript": "^5.5.4"
 	}
 }
