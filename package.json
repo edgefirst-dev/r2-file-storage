@@ -3,9 +3,7 @@
 	"version": "1.0.1",
 	"description": "An implementation of @mjackson/file-storage that uses R2 as the storage backend.",
 	"license": "MIT",
-	"funding": [
-		"https://github.com/sponsors/sergiodxa"
-	],
+	"funding": ["https://github.com/sponsors/sergiodxa"],
 	"author": {
 		"name": "Sergio Xalambrí",
 		"email": "hello+oss@sergiodxa.com",
@@ -31,27 +29,22 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"files": [
-		"build",
-		"package.json",
-		"README.md"
-	],
+	"files": ["build", "package.json", "README.md"],
 	"exports": {
 		".": "./build/index.js",
 		"./package.json": "./package.json"
 	},
-	"dependencies": {
-		"@cloudflare/workers-types": "^4.20241127.0",
+	"peerDependencies": {
+		"@cloudflare/workers-types": "^4.20241205.0",
 		"@mjackson/file-storage": "^0.3.0"
 	},
-	"peerDependencies": {},
 	"devDependencies": {
-		"@arethetypeswrong/cli": "^0.17.0",
+		"@arethetypeswrong/cli": "^0.17.1",
 		"@biomejs/biome": "^1.9.4",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/bun": "^1.1.14",
 		"consola": "^3.2.3",
-		"typedoc": "^0.27.2",
+		"typedoc": "^0.27.3",
 		"typedoc-plugin-mdn-links": "^4.0.1",
 		"typescript": "^5.7.2"
 	}
