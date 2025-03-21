@@ -41,8 +41,8 @@
 		"./package.json": "./package.json"
 	},
 	"peerDependencies": {
-		"@cloudflare/workers-types": "^4.20241205.0",
-		"@mjackson/file-storage": "^0.3.0"
+		"@cloudflare/workers-types": "^4.20250320.0",
+		"@mjackson/file-storage": "^0.6.1"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.17.1",

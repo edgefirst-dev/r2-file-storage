@@ -26,8 +26,10 @@ let storage = new R2FileStorage(r2); // Get r2 from your Cloudflare bindings
 let file = new File(["hello world"], "hello.txt", { type: "text/plain" });
 let key = "hello-key";
 
-// Put the file in storage.
+// Set the file in storage.
 await storage.set(key, file);
+
+let file = await storage.put(key, file);
 
 // Then, sometime later...
 let fileFromStorage = await storage.get(key);
@@ -37,6 +39,8 @@ fileFromStorage.type; // 'text/plain'
 
 // To remove from storage
 await storage.remove(key);
+
+await storage.list({ prefix: "hello" }); // List all files with keys starting with "hello"
 ```
 
 ## License

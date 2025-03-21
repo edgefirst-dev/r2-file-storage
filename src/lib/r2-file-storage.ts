@@ -1,5 +1,11 @@
 import type { R2Bucket } from "@cloudflare/workers-types";
-import type { FileStorage } from "@mjackson/file-storage";
+import type {
+	FileKey,
+	FileMetadata,
+	FileStorage,
+	ListOptions,
+	ListResult,
+} from "@mjackson/file-storage";
 
 export namespace R2FileStorage {
 	export interface CustomMetadata extends Record<string, string> {
@@ -23,15 +29,23 @@ export class R2FileStorage implements FileStorage {
 	}
 
 	async set(key: string, file: File) {
+		await this.put(key, file);
+	}
+
+	async put(key: string, file: File) {
 		let customMetadata = {
 			name: file.name,
 			type: file.type,
 		} satisfies R2FileStorage.CustomMetadata;
 
-		await this.r2.put(key, await file.arrayBuffer(), {
+		let body = await file.arrayBuffer();
+
+		await this.r2.put(key, body, {
 			httpMetadata: { contentType: file.type },
 			customMetadata,
 		});
+
+		return file;
 	}
 
 	async get(key: string) {
@@ -51,5 +65,33 @@ export class R2FileStorage implements FileStorage {
 
 	async remove(key: string) {
 		await this.r2.delete(key);
+	}
+
+	async list<T extends ListOptions>(options?: T): Promise<ListResult<T>> {
+		let result = await this.r2.list({
+			cursor: options?.cursor,
+			limit: options?.limit,
+			prefix: options?.prefix,
+		});
+
+		return {
+			files: result.objects.map((object) => {
+				let metadata =
+					object.customMetadata as unknown as R2FileStorage.CustomMetadata;
+
+				if (options?.includeMetadata === true) {
+					return {
+						key: object.key,
+						lastModified: object.uploaded.getTime(),
+						size: object.size,
+						name: metadata?.name ?? object.key,
+						type: object.httpMetadata?.contentType ?? metadata?.type,
+					} satisfies FileMetadata;
+				}
+
+				return { key: object.key } satisfies FileKey;
+			}) as ListResult<T>["files"],
+			cursor: result.truncated ? result.cursor : undefined,
+		};
 	}
 }

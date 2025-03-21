@@ -14,7 +14,7 @@ describe("R2FileStorage", () => {
 
 		let file = new File(["Hello, world!"], "hello.txt", { type: "text/plain" });
 
-		put.mockImplementationOnce(async (key: string, buffer: ArrayBuffer) => {
+		put.mockImplementationOnce(async (key: string, buffer: ArrayBufferLike) => {
 			expect(key).toBe("hello");
 			expect(new Uint8Array(buffer)).toEqual(
 				new TextEncoder().encode("Hello, world!"),
